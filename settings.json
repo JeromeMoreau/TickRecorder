@@ -1,0 +1,13 @@
+[
+  {
+    "account": {
+      "account_id": "your_account_id",
+      "token": "your token",
+      "environment": "practice"
+    },
+    "pairs":[
+      "EUR_USD","AUD_USD","GBP_JPY"
+    ]
+  }
+
+]
