@@ -33,4 +33,8 @@ class MongoDataStore(object):
         tick = {"time": tick['time'], "pair": tick["instrument"], "bid": tick['bid'], "ask": tick['ask']}
         print(tick)
 
-        library.insert_one(tick)
+        try:
+            library.insert_one(tick)
+        except pymongo.errors.DuplicateKeyError:
+            print("duplicate record: ",tick)
+
