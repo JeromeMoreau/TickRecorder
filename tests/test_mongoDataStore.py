@@ -31,5 +31,5 @@ class TestMongoDataStore(TestCase):
         run after the tests
         remove the document collection in the database
         """
-        self.mongo.database.drop_collection('test')
+        self.mongo.database.drop_collection('testCollection')
         super().tearDown()

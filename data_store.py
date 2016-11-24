@@ -37,4 +37,6 @@ class MongoDataStore(object):
             library.insert_one(tick)
         except pymongo.errors.DuplicateKeyError:
             print("duplicate record: ",tick)
+        except Exception as e:
+            print(e)
 

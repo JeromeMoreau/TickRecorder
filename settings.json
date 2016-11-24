@@ -1,12 +1,42 @@
 [
   {
     "account": {
-      "account_id": "your_account_id",
-      "token": "your token",
+      "account_id": "1947211",
+      "token": "1478277e965621e98bfc1c0beeb94a53-a4ea82586cd6f2710b3bd9725d42010a",
       "environment": "practice"
     },
     "pairs":[
-      "EUR_USD","AUD_USD","GBP_JPY"
+        "AUD_CAD",
+		"AUD_JPY",
+		"AUD_NZD",
+		"AUD_USD",
+		"CAD_JPY",
+		"EUR_AUD",
+		"EUR_CAD",
+		"EUR_GBP",
+		"EUR_JPY",
+		"EUR_NZD",
+		"EUR_USD",
+		"GBP_AUD",
+		"GBP_CAD",
+		"GBP_JPY",
+		"GBP_USD",
+		"NZD_CAD",
+		"NZD_JPY",
+		"NZD_USD",
+		"USD_CAD",
+		"USD_JPY",
+		"XAU_USD",
+		"XAG_USD",
+		"BCO_USD",
+		"WTICO_USD",
+		"NATGAS_USD",
+		"SPX500_USD",
+		"FR40_EUR",
+		"CORN_USD",
+		"SOYBN_USD",
+		"SUGAR_USD",
+		"WHEAT_USD"
     ]
   }
 
