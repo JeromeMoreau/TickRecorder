@@ -10,7 +10,7 @@ class Streaming(oandapy.Streamer):
         :param account:
         :param data_handler:
         :param event_handler:
-        :return:
+        :return
         """
         super(Streaming,self).__init__(environment=account_environment,access_token=account_token)
         self.instruments_list = instruments_list

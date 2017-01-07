@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tickRecorder">
+<head>
+    <meta charset="UTF-8">
+    <title>Tick Recorder</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="core.js"></script>
+</head>
+<body ng-controller="indexController">
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <a class="navbar-brand" href="#">TickRecorder</a>
+    </nav>
+
+    <div class="container align-content-center" role="alert" ng-class="{ 'alert alert-success': thread.status == true, 'alert alert-warning': thread.status == false }">
+         <h4>Server status: {{thread.status}}</h4>
+    </div>
+
+    <div class="container jumbotron">
+    <form ng-submit="setKeys()">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Account ID</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" ng-model="keys.account_id">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Token</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" ng-model="keys.token">
+        </div>
+
+        <button type="submit" class="btn btn-warning">Set</button>
+        <!--button  class="btn btn-warning">Set as default</button-->
+    </form>
+    </div>
+
+    <a class="btn btn-primary btn-lg btn-block" href="/start">Start</a>
+</body>
+</html>

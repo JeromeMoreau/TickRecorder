@@ -1,5 +1,7 @@
 from unittest import TestCase
-from data_store import MongoDataStore
+
+from app.data_store import MongoDataStore
+
 
 class TestMongoDataStore(TestCase):
 
