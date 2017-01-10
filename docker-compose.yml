@@ -1,0 +1,21 @@
+version: '2'
+services:
+  web:
+    build: .
+    container_name: tickRecorder
+    ports:
+      - "80:80"
+    links:
+      - mongo:mongo
+  mongo:
+    image: "dhermanns/rpi-mongo"
+    container_name: mongo
+    volumes:
+      - /opt/mongodb/db:/data/db
+
+  express:
+    image: "ind3x/rpi-mongo-express"
+    ports:
+      - "8081:8081"
+    links:
+      - mongo

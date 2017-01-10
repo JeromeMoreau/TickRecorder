@@ -1,5 +1,6 @@
 import json
 import threading
+import os
 
 from app.data_store import MongoDataStore
 from app.streamer import Streaming
@@ -13,7 +14,8 @@ class TickRecorder(object):
         self.account_id = self.settings['account']['account_id']
         self.token = self.settings['account']['token']
         self.environment = self.settings['account']['environment']
-        self.store = MongoDataStore()
+        #self.store = MongoDataStore(db_adress=os.environ['DB_PORT_27017_TCP_ADDR'],db_port=27017,db_name='TICKS')
+        self.store = MongoDataStore(db_adress='mongo', db_port=27017, db_name='TICKS')
 
         self.streamer = Streaming(self.symbol_list,self.account_id,self.token,self.environment,self.store)
         self.thread = threading.Thread(target=self.streamer.stream_prices, args=[])
