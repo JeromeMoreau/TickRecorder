@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TickRecorder</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-grid.css">
+    <script src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="#">TickRecorder</a>
+        <span class="navbar-text text-right">Server status: {{is_alive}}</span>
+    </nav>
+
+    <div class="container">
+        <a class="btn btn-primary btn-lg btn-block" href="/start">Start</a>
+    </div>
+
+    <div class="container jumbotron">
+    <form action="{{ url_for('change_keys') }}" method="post" name="keys">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Account ID</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" value={{keys.account_id}} name="account_id">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Token</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" value={{keys.token}} name="token">
+        </div>
+
+        <button type="submit" class="btn btn-warning">Set</button>
+    </form>
+    </div>
+
+    <!------- CHANGING TRADED SYMBOLS -------->
+    <div class="container jumbotron">
+        <h3>Available symbols</h3>
+        <form action="{{ url_for('change_traded_symbols') }}" method="post" name="symbols">
+            {% for symbol in symbols %}
+            <div class="form-check">
+              <label class="form-check-label">
+                  {% if symbols[symbol] == True %}
+                    <input class="form-check-input" type="checkbox" name={{symbol}} checked="True">
+                  {% else %}
+                    <input class="form-check-input" type="checkbox" name={{symbol}}>
+                  {% endif %}
+                {{symbol}}
+              </label>
+            </div>
+            {% endfor %}
+
+            <br/>
+            <input type="submit" class="btn btn-warning align-content-center" value="Save">
+        </form>
+
+    </div>
+
+    <a class="btn btn-primary btn-lg btn-block" href="/start">Start</a>
+</body>
+</html>
